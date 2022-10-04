@@ -1,1 +1,4 @@
 .idea/
+housing_predictor.egg-info/
+build/
+dist/
