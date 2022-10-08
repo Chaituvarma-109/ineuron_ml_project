@@ -26,4 +26,4 @@ class HousingException(Exception):
         return self.error_message
 
     def __repr__(self) -> str:
-        return HousingException.__name__.str()
+        return str(HousingException.__name__)
