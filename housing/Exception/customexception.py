@@ -16,10 +16,12 @@ class HousingException(Exception):
         """
         _, _, exec_tb = err_detail.exc_info()
 
-        line_num = exec_tb.tb_frame.f_lineno
+        exception_block_line_number = exec_tb.tb_frame.tb_lineno
+        try_block_line_num = exec_tb.tb_lineno
         file_name = exec_tb.tb_frame.f_code.co_filename
 
-        error_message = f"Error occurred in script: {file_name} at line number: {line_num} error msg: {error_message}"
+        error_message = f"Error occurred in script: {file_name} at try block line number: {try_block_line_num} and " \
+                        f"exception block line num: {exception_block_line_number} error msg: {error_message} "
         return error_message
 
     def __str__(self):
