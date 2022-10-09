@@ -3,3 +3,4 @@ housing_predictor.egg-info/
 build/
 dist/
 logs/
+housing/artifact
