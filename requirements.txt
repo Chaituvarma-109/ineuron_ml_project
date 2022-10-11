@@ -5,4 +5,5 @@ sklearn
 pandas
 pyyaml
 evidently
+dill
 setuptools~=63.4.1
