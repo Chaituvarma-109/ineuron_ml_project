@@ -18,6 +18,7 @@ from housing.Entity.artifact_entity import DataIngestionArtifact, DataValidation
 class DataValidation:
     def __init__(self, data_valid_config: DatavalidationConfig, data_ingestion_artifact: DataIngestionArtifact):
         try:
+            logging.info(f"{'>>' * 30}Data Validation log started.{'<<' * 30} ")
             self.data_validation_config = data_valid_config
             self.data_ingestion_artifact = data_ingestion_artifact
         except Exception as e:
@@ -138,5 +139,9 @@ class DataValidation:
             )
             logging.info(f"Data Validation Artifact: {data_validation_artifact}")
 
+            return data_validation_artifact
         except Exception as e:
             raise HousingException(e, sys) from e
+
+    def __del__(self):
+        logging.info(f"{'>>' * 30}Data Validation log completed.{'<<' * 30} \n\n")
