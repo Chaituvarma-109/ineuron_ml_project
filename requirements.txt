@@ -7,3 +7,4 @@ pyyaml
 evidently
 dill
 setuptools~=63.4.1
+matplotlib
